@@ -33,6 +33,10 @@ export function handleScroll (
   from: Route,
   isPop: boolean
 ) {
+
+  // New
+  console.log("I am working");
+
   if (!router.app) {
     return
   }
