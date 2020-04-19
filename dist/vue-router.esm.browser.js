@@ -1694,9 +1694,8 @@ function handleScroll (
   from,
   isPop
 ) {
-
   // New
-  console.log("I am working");
+  console.log('I am working');
 
   if (!router.app) {
     return
@@ -1744,9 +1743,12 @@ function handleScroll (
 function saveScrollPosition () {
   const key = getStateKey();
   if (key) {
+    // New
+    const target = document.getElementById('layout-body');
+
     positionStore[key] = {
-      x: window.pageXOffset,
-      y: window.pageYOffset
+      x: target.scrollTop, // window.pageXOffset
+      y: target.scrollLeft // widnow.pageYOffset
     };
   }
 }
@@ -1816,7 +1818,10 @@ function scrollToPosition (shouldScroll, position) {
   }
 
   if (position) {
-    window.scrollTo(position.x, position.y);
+    // New
+    const target = document.getElementById('layout-body');
+
+    target.scrollTo(position.x, position.y);
   }
 }
 
