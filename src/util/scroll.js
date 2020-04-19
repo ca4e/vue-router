@@ -86,8 +86,8 @@ export function saveScrollPosition () {
     const target = document.getElementById('layout-body')
 
     positionStore[key] = {
-      x: target.scrollTop, // window.pageXOffset
-      y: target.scrollLeft // widnow.pageYOffset
+      x: target.scrollLeft, // window.pageXOffset
+      y: target.scrollTop // widnow.pageYOffset
     }
   }
 }
